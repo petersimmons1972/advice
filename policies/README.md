@@ -1,14 +1,25 @@
-# Security Policies — Consolidated & Enforceable
+# Security Policies — Phase 2 Exploration
 
-**STATUS: placeholder (Phase 2)**
+**STATUS: experimental (form TBD)**
 
 ## Overview
 
-Machine-readable security policies synthesized from vendor guidance across `../vendors/`. These policies are:
-- **Enforceable** — Can be implemented via OPA/Kyverno, policy-as-code tools
-- **Consolidated** — Reconcile vendor differences into unified standards
-- **Auditable** — Track source vendor recommendations for each policy decision
-- **Versioned** — Changes documented with rationale
+Consolidation of vendor guidance from `../vendors/` into a unified security policy framework. The **final form is unknown** — this directory is for exploration and experimentation.
+
+Possible forms:
+- **JSON/YAML policies** — Machine-readable standards
+- **Markdown checklists** — Human-readable compliance checklists
+- **OPA/Rego rules** — Policy-as-code enforcement
+- **Terraform modules** — Infrastructure enforcement
+- **Decision trees** — Flowcharts for policy decisions
+- **A combination** — Different formats for different contexts
+- **Something else entirely** — To be discovered
+
+Key requirements (TBD which format best serves these):
+- **Traceable** — Every policy decision links back to vendor sources
+- **Reconciled** — Documents when vendors disagree and why we chose one approach
+- **Auditable** — Can be reviewed and challenged
+- **Actionable** — Implementers know what to do
 
 ## Philosophy
 
@@ -35,94 +46,64 @@ When vendors conflict (e.g., Chainguard vs. AWS on image scanning frequency):
 }
 ```
 
-## Directory Structure
+## Potential Topics (Not Prescriptive)
 
-```
-policies/
-├── README.md                              # This file
-├── container-security/                    # Container & image policies
-│   ├── distroless-requirements.json       # Base image standards
-│   ├── vulnerability-scanning.json        # Scanning and remediation SLOs
-│   ├── image-update-frequency.json        # How often images rebuild/update
-│   └── runtime-security.json              # Runtime detection and enforcement
-├── supply-chain/                          # Dependency and artifact policies
-│   ├── dependency-vetting.json            # Package validation requirements
-│   ├── artifact-signing.json              # Signed artifacts enforcement
-│   └── license-compliance.json            # License verification requirements
-├── iam/                                   # Identity and access management
-│   ├── least-privilege.json               # Min permission standards
-│   ├── credential-rotation.json           # Secret rotation SLOs
-│   └── audit-logging.json                 # What must be logged
-├── secrets-management/                    # Secrets handling
-│   ├── secret-storage.json                # Where/how secrets are stored
-│   ├── secret-rotation.json               # Rotation frequency and process
-│   └── secret-access-audit.json           # Access logging requirements
-└── enforcement/                           # How policies are enforced
-    ├── opa-rego/                          # OPA/Gatekeeper rules
-    ├── kyverno/                           # Kyverno policies
-    └── terraform/                         # Terraform policy-as-code
-```
+Topics that will likely need policy consolidation:
+- **Container security** — Base images, scanning, updates, runtime behavior
+- **Supply chain** — Dependency vetting, artifact signing, license compliance
+- **Identity & access** — Least privilege, credential rotation, audit logging
+- **Secrets management** — Storage, rotation, access auditing
+- **Threat response** — Incident classification, notification, containment
+- **Compliance** — Regulatory requirements that override vendor preferences
 
-## Policy JSON Schema
+## What We DON'T Know Yet
 
-(To be defined as we build Phase 2)
+- **Format** — JSON? YAML? Markdown? Rego? All of the above?
+- **Granularity** — One policy per rule? Per domain? Per vendor-conflict?
+- **Enforcement** — Automated checks? Manual audits? Both?
+- **Lifecycle** — How often do policies change? Who updates them?
+- **Audience** — Developers? DevOps? Security teams? Auditors?
+- **Integration** — How do Clearwatch/infrastructure/homelab consume policies?
 
-Each policy document will include:
-- **Policy ID** — Unique identifier
-- **Category** — container-security, supply-chain, iam, secrets-management
-- **Description** — Human-readable policy statement
-- **Vendors** — Which vendors recommend this, with sources
-- **Requirements** — Specific, testable requirements
-- **Enforcement** — How it's implemented (OPA, Kyverno, manual audit, etc.)
-- **SLO** — Service level objective (e.g., "scan within 24h of image build")
-- **Exceptions** — When/how policy can be waived
-- **Last Updated** — Timestamp
-- **Rationale** — Why this policy, trade-offs considered
+## How Phase 2 Will Work
 
-Example (placeholder):
-```json
-{
-  "policy_id": "CS-001",
-  "category": "container-security",
-  "title": "Distroless Base Images Required",
-  "description": "All production container images must use distroless or minimal base images",
-  "vendors": {
-    "chainguard": "security advisory — distroless reduces CVE surface",
-    "aws": "best practices — minimal attack surface",
-    "nist": "supply chain security — minimize dependencies"
-  },
-  "requirements": [
-    "No package manager in runtime image",
-    "No shell interpreter",
-    "Base image from curated list (Chainguard, Google Distroless, etc.)"
-  ],
-  "enforcement": {
-    "tool": "kyverno",
-    "file": "enforcement/kyverno/distroless-required.yaml"
-  },
-  "exceptions": [
-    "Development/debug images (tagged with -debug)",
-    "One-off admin tooling (documented in JIRA)"
-  ],
-  "rationale": "Balances security (99% of use cases) with operational reality (debug access when needed)"
-}
-```
+1. **Observe patterns** — As `../vendors/` fills up, patterns will emerge
+   - Which recommendations appear across multiple vendors?
+   - Where do vendors conflict?
+   - Which topics are most critical?
 
-## Workflow (Future)
+2. **Experiment with form** — Try different formats to capture policies
+   - A checklist format?
+   - A decision table?
+   - Executable code (OPA/Kyverno)?
+   - Something hybrid?
 
-1. **Research** — Vendor guidance in `../vendors/`
-2. **Synthesis** — Team reviews conflicting recommendations
-3. **Decision** — Record policy + rationale in JSON
-4. **Implementation** — Wire into OPA/Kyverno/Terraform
-5. **Audit** — Track which projects conform to policies
-6. **Update** — As vendor guidance changes, update policies
+3. **Iterate** — The format will become clear through use
+   - What's easy to read?
+   - What's easy to enforce?
+   - What's easy to audit?
+   - What survives first contact with Clearwatch/infrastructure/homelab?
 
-## Expected Timeline
+## Key Constraint
 
-- **Near term:** Skeleton JSON schema + Chainguard-derived policies
-- **Mid term:** Multi-vendor consolidation (Chainguard + NIST + AWS)
-- **Long term:** Full policy library with enforcement across all projects (Clearwatch, infrastructure, homelab)
+**Vendor traceability** — Whatever form policies take, they must trace back to vendor sources:
+- Which vendor recommended this?
+- Did multiple vendors agree or disagree?
+- Why did we choose this approach?
 
----
+This is the non-negotiable requirement. The format is negotiable.
 
-**Note:** This directory is currently a placeholder. Phase 2 begins when we're ready to synthesize vendor advice into enforceable policies.
+## Next Steps
+
+1. **Fill `../vendors/`** with multi-vendor guidance (Chainguard, NIST, AWS, GCP, GitHub)
+2. **Identify conflicts** — Where do vendors disagree? Why?
+3. **Experiment** — Try different policy formats and see what works
+4. **Discover form** — The final shape will emerge from actual use
+
+## Notes
+
+- This is **not** a placeholder awaiting a master plan
+- This **is** a research area where the final form will be discovered through experimentation
+- The one fixed constraint is **vendor traceability** — everything traces to sources
+- Format decisions will be driven by "what works for Clearwatch, infrastructure, and homelab"
+- We may end up with multiple formats for different contexts (e.g., checklist for humans, JSON for automation)
