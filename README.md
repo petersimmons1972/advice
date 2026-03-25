@@ -22,16 +22,25 @@ advice/
 ├── security-advisories/         # Critical security notices and alerts
 │   ├── litellm-supply-chain.md  # LiteLLM malware (versions 1.82.7-1.82.8)
 │   └── ...
-├── chainguard/                  # Chainguard resources and guidance
-│   ├── container-hardening.md   # CHPs framework and best practices
-│   ├── distroless-patterns.md   # Distroless image design patterns
-│   └── vulnerability-management.md
-├── container-security/          # General container security practices
-│   ├── image-scanning.md        # Vulnerability scanning (Grype, Trivy)
-│   ├── update-strategies.md     # Keeping images current (Renovate, Digestabot)
-│   └── policy-enforcement.md    # OPA Gatekeeper, Kyverno patterns
-└── supply-chain/                # Supply chain security
-    └── dependency-vetting.md
+├── vendors/                     # Guidance organized by source vendor/author
+│   ├── chainguard/              # Chainguard resources and guidance
+│   │   ├── container-hardening.md   # CHPs framework and best practices
+│   │   ├── distroless-patterns.md   # Distroless image design patterns
+│   │   └── vulnerability-management.md
+│   ├── nist/                    # NIST Cybersecurity Framework
+│   ├── aws/                     # AWS security best practices
+│   ├── gcp/                     # Google Cloud Platform security
+│   ├── github/                  # GitHub security advisories
+│   └── [other-vendors]/
+├── topics/                      # Cross-vendor guidance by topic
+│   ├── container-security/      # General container security practices
+│   │   ├── image-scanning.md        # Vulnerability scanning (Grype, Trivy)
+│   │   ├── update-strategies.md     # Keeping images current (Renovate, Digestabot)
+│   │   └── policy-enforcement.md    # OPA Gatekeeper, Kyverno patterns
+│   └── supply-chain/            # Supply chain security
+│       └── dependency-vetting.md
+└── cve-tracking/                # Known vulnerabilities and tracking
+    └── active-threats.md        # Currently active exploited CVEs
 ```
 
 ## Quick Reference

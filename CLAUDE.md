@@ -6,16 +6,19 @@ This is a reference project for security guidance and best practices. It serves 
 
 ## What Goes Here
 
-✅ **Curated security guidance** from authoritative sources (Chainguard, NIST, security researchers)
+✅ **Curated security guidance** from authoritative sources (Chainguard, NIST, AWS, GCP, GitHub, security researchers)
+✅ **Multi-vendor perspectives** — collect advice from all relevant security vendors
 ✅ **Critical security notices** that require immediate action (supply chain attacks, CVE alerts)
 ✅ **Best practices frameworks** (Container Hardening Priorities, distroless patterns, etc.)
 ✅ **Tool recommendations** with usage patterns (Grype, Trivy, Renovate, Kyverno)
 ✅ **Cross-project references** — when Clearwatch or infrastructure needs guidance, link here
+✅ **Comparative analysis** — when vendors disagree, document different perspectives and rationales
 
 ❌ **Unverified claims** — everything must cite authoritative sources
 ❌ **Implementation code** — this is guidance documentation, not implementation
 ❌ **Project-specific details** — those stay in their respective project directories
 ❌ **Opinions without citation** — back recommendations with evidence
+❌ **Single-vendor gospel** — encourage cross-vendor comparison and evaluation
 
 ## Quality Standards
 
