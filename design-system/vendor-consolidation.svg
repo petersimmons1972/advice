@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%">
+  <defs>
+    <filter id="shadow-standard" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="3" dy="3" stdDeviation="0" flood-color="#2B2B2B" flood-opacity="0.15"/>
+    </filter>
+    <filter id="shadow-elevated" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="5" dy="5" stdDeviation="0" flood-color="#2B2B2B" flood-opacity="0.2"/>
+    </filter>
+    <style>
+      @media (prefers-color-scheme: dark) {
+        .bg-ivory { fill: #1A1A2E; }
+        .text-navy { fill: #F5F0E8; }
+        .text-charcoal { fill: #E0E0E0; }
+        .border-navy { stroke: #4A7C9B; }
+        .card-fill { fill: #2B2B3D; }
+      }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg-ivory" width="600" height="600" fill="#F5F0E8" rx="0"/>
+
+  <!-- Title Block -->
+  <rect x="40" y="30" width="520" height="60" fill="#1B3A5C" rx="0"/>
+  <text x="300" y="68" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="26" fill="#F5F0E8" text-anchor="middle" letter-spacing="0.05em">VENDOR CONSOLIDATION</text>
+
+  <!-- Subtitle -->
+  <text x="300" y="115" font-family="'Helvetica Neue', Arial, sans-serif" font-size="12" fill="#8C8C8C" text-anchor="middle" letter-spacing="0.08em">MULTI-SOURCE SECURITY GUIDANCE — UNIFIED VIEW</text>
+
+  <!-- Vendor Cards Row -->
+  <!-- Card 1: Chainguard -->
+  <g filter="url(#shadow-standard)">
+    <rect class="card-fill" x="40" y="145" width="115" height="130" fill="#FFFFFF" stroke="#1B3A5C" stroke-width="2" rx="4"/>
+    <rect x="40" y="145" width="115" height="28" fill="#1B3A5C" rx="4"/>
+    <rect x="40" y="169" width="115" height="4" fill="#1B3A5C"/>
+    <text x="97" y="165" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="600" font-size="11" fill="#F5F0E8" text-anchor="middle" letter-spacing="0.05em">CHAINGUARD</text>
+    <text x="97" y="198" font-family="'Helvetica Neue', Arial, sans-serif" font-size="10" fill="#2B2B2B" text-anchor="middle">Supply Chain</text>
+    <text x="97" y="212" font-family="'Helvetica Neue', Arial, sans-serif" font-size="10" fill="#2B2B2B" text-anchor="middle">Image Hardening</text>
+    <text x="97" y="226" font-family="'Helvetica Neue', Arial, sans-serif" font-size="10" fill="#2B2B2B" text-anchor="middle">SBOM</text>
+    <circle cx="97" y="252" cy="255" r="8" fill="none" stroke="#2D6A4F" stroke-width="2"/>
+    <polyline points="92,255 96,259 103,251" fill="none" stroke="#2D6A4F" stroke-width="2"/>
+  </g>
+
+  <!-- Card 2: NIST -->
+  <g filter="url(#shadow-standard)">
+    <rect class="card-fill" x="170" y="145" width="115" height="130" fill="#FFFFFF" stroke="#1B3A5C" stroke-width="2" rx="4"/>
+    <rect x="170" y="145" width="115" height="28" fill="#1B3A5C" rx="4"/>
+    <rect x="170" y="169" width="115" height="4" fill="#1B3A5C"/>
+    <text x="227" y="165" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="600" font-size="11" fill="#F5F0E8" text-anchor="middle" letter-spacing="0.05em">NIST</text>
+    <text x="227" y="198" font-family="'Helvetica Neue', Arial, sans-serif" font-size="10" fill="#2B2B2B" text-anchor="middle">Frameworks</text>
+    <text x="227" y="212" font-family="'Helvetica Neue', Arial, sans-serif" font-size="10" fill="#2B2B2B" text-anchor="middle">Baselines</text>
+    <text x="227" y="226" font-family="'Helvetica Neue', Arial, sans-serif" font-size="10" fill="#2B2B2B" text-anchor="middle">Controls</text>
+    <circle cx="227" cy="255" r="8" fill="none" stroke="#2D6A4F" stroke-width="2"/>
+    <polyline points="222,255 226,259 233,251" fill="none" stroke="#2D6A4F" stroke-width="2"/>
+  </g>
+
+  <!-- Card 3: AWS -->
+  <g filter="url(#shadow-standard)">
+    <rect class="card-fill" x="300" y="145" width="115" height="130" fill="#FFFFFF" stroke="#1B3A5C" stroke-width="2" rx="4"/>
+    <rect x="300" y="145" width="115" height="28" fill="#1B3A5C" rx="4"/>
+    <rect x="300" y="169" width="115" height="4" fill="#1B3A5C"/>
+    <text x="357" y="165" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="600" font-size="11" fill="#F5F0E8" text-anchor="middle" letter-spacing="0.05em">AWS</text>
+    <text x="357" y="198" font-family="'Helvetica Neue', Arial, sans-serif" font-size="10" fill="#2B2B2B" text-anchor="middle">Well-Architected</text>
+    <text x="357" y="212" font-family="'Helvetica Neue', Arial, sans-serif" font-size="10" fill="#2B2B2B" text-anchor="middle">GuardDuty</text>
+    <text x="357" y="226" font-family="'Helvetica Neue', Arial, sans-serif" font-size="10" fill="#2B2B2B" text-anchor="middle">Inspector</text>
+    <circle cx="357" cy="255" r="8" fill="none" stroke="#2D6A4F" stroke-width="2"/>
+    <polyline points="352,255 356,259 363,251" fill="none" stroke="#2D6A4F" stroke-width="2"/>
+  </g>
+
+  <!-- Card 4: GitHub -->
+  <g filter="url(#shadow-standard)">
+    <rect class="card-fill" x="430" y="145" width="115" height="130" fill="#FFFFFF" stroke="#1B3A5C" stroke-width="2" rx="4"/>
+    <rect x="430" y="145" width="115" height="28" fill="#1B3A5C" rx="4"/>
+    <rect x="430" y="169" width="115" height="4" fill="#1B3A5C"/>
+    <text x="487" y="165" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="600" font-size="11" fill="#F5F0E8" text-anchor="middle" letter-spacing="0.05em">GITHUB</text>
+    <text x="487" y="198" font-family="'Helvetica Neue', Arial, sans-serif" font-size="10" fill="#2B2B2B" text-anchor="middle">Dependabot</text>
+    <text x="487" y="212" font-family="'Helvetica Neue', Arial, sans-serif" font-size="10" fill="#2B2B2B" text-anchor="middle">Code Scanning</text>
+    <text x="487" y="226" font-family="'Helvetica Neue', Arial, sans-serif" font-size="10" fill="#2B2B2B" text-anchor="middle">Secret Scanning</text>
+    <circle cx="487" cy="255" r="8" fill="none" stroke="#2D6A4F" stroke-width="2"/>
+    <polyline points="482,255 486,259 493,251" fill="none" stroke="#2D6A4F" stroke-width="2"/>
+  </g>
+
+  <!-- Flow Arrows Down -->
+  <line x1="97" y1="280" x2="97" y2="325" stroke="#8C8C8C" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="227" y1="280" x2="227" y2="325" stroke="#8C8C8C" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="357" y1="280" x2="357" y2="325" stroke="#8C8C8C" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="487" y1="280" x2="487" y2="325" stroke="#8C8C8C" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- Convergence Lines -->
+  <line x1="97" y1="325" x2="300" y2="355" stroke="#8C8C8C" stroke-width="1.5"/>
+  <line x1="227" y1="325" x2="300" y2="355" stroke="#8C8C8C" stroke-width="1.5"/>
+  <line x1="357" y1="325" x2="300" y2="355" stroke="#8C8C8C" stroke-width="1.5"/>
+  <line x1="487" y1="325" x2="300" y2="355" stroke="#8C8C8C" stroke-width="1.5"/>
+
+  <!-- Central Unified Box -->
+  <g filter="url(#shadow-elevated)">
+    <rect class="card-fill" x="140" y="355" width="320" height="100" fill="#FFFFFF" stroke="#C23B22" stroke-width="3" rx="4"/>
+    <rect x="140" y="355" width="320" height="32" fill="#C23B22" rx="4"/>
+    <rect x="140" y="383" width="320" height="4" fill="#C23B22"/>
+    <text x="300" y="377" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="16" fill="#F5F0E8" text-anchor="middle" letter-spacing="0.05em">UNIFIED SECURITY GUIDANCE</text>
+    <text x="300" y="410" font-family="'Helvetica Neue', Arial, sans-serif" font-size="11" fill="#2B2B2B" text-anchor="middle">Reconciled Policies &amp; Actionable Procedures</text>
+    <text x="300" y="428" font-family="'Helvetica Neue', Arial, sans-serif" font-size="11" fill="#2B2B2B" text-anchor="middle">Machine-Readable &amp; Enforceable Standards</text>
+    <text x="300" y="446" font-family="'Helvetica Neue', Arial, sans-serif" font-size="11" fill="#6B3A2A" text-anchor="middle" font-weight="600">One Repository — Multiple Vendors — Clear Guidance</text>
+  </g>
+
+  <!-- Output Arrows -->
+  <line x1="200" y1="460" x2="140" y2="500" stroke="#D4A843" stroke-width="1.5"/>
+  <line x1="300" y1="460" x2="300" y2="500" stroke="#D4A843" stroke-width="1.5"/>
+  <line x1="400" y1="460" x2="460" y2="500" stroke="#D4A843" stroke-width="1.5"/>
+
+  <!-- Output Labels -->
+  <g>
+    <rect x="75" y="500" width="130" height="36" fill="#D4A843" rx="2"/>
+    <text x="140" y="523" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="600" font-size="11" fill="#FFFFFF" text-anchor="middle">CLEARWATCH</text>
+  </g>
+  <g>
+    <rect x="235" y="500" width="130" height="36" fill="#4A7C9B" rx="2"/>
+    <text x="300" y="523" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="600" font-size="11" fill="#FFFFFF" text-anchor="middle">INFRASTRUCTURE</text>
+  </g>
+  <g>
+    <rect x="395" y="500" width="130" height="36" fill="#2D6A4F" rx="2"/>
+    <text x="460" y="523" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="600" font-size="11" fill="#FFFFFF" text-anchor="middle">COMPLIANCE</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="300" y="570" font-family="'Helvetica Neue', Arial, sans-serif" font-size="9" fill="#8C8C8C" text-anchor="middle" letter-spacing="0.08em">SIMMONS &amp; PARTNERS — DESIGN SYSTEM v1.0 — 2026</text>
+</svg>
