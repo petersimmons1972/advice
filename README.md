@@ -8,10 +8,16 @@ Central repository for security guidance, best practices, and threat intelligenc
 
 ## Purpose
 
-- **Single source of truth** for security recommendations across projects
+**Phase 1 — Collect:** Single source of truth for security recommendations from multiple vendors
 - **Cross-project reference** — Clearwatch, infrastructure, homelab, and other projects pull guidance from here
 - **Threat tracking** — Critical security notices (LiteLLM, supply chain attacks, CVEs)
-- **Best practices** — Container security, secrets management, image hardening, policy enforcement
+- **Multi-vendor perspectives** — Container security, secrets management, image hardening from Chainguard, NIST, AWS, GCP, GitHub, etc.
+
+**Phase 2 — Consolidate:** Synthesize vendor guidance into enforceable security policies
+- **JSON/YAML policies** — Machine-readable security standards
+- **Vendor reconciliation** — Document conflicts and record decisions
+- **Implementation** — OPA/Kyverno/Terraform enforcement rules
+- **Audit trail** — Track source recommendations for each policy decision
 
 ## Directory Structure
 
