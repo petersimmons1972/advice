@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="100%">
+  <defs>
+    <filter id="shadow-standard" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="3" dy="3" stdDeviation="0" flood-color="#2B2B2B" flood-opacity="0.15"/>
+    </filter>
+    <filter id="shadow-elevated" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="5" dy="5" stdDeviation="0" flood-color="#2B2B2B" flood-opacity="0.2"/>
+    </filter>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#8C8C8C"/>
+    </marker>
+    <marker id="arrowhead-gold" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#D4A843"/>
+    </marker>
+    <style>
+      @media (prefers-color-scheme: dark) {
+        .bg-ivory { fill: #1A1A2E; }
+        .text-navy { fill: #F5F0E8; }
+        .text-charcoal { fill: #E0E0E0; }
+        .border-navy { stroke: #4A7C9B; }
+        .card-fill { fill: #2B2B3D; }
+      }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg-ivory" width="960" height="540" fill="#F5F0E8"/>
+
+  <!-- Title Bar -->
+  <rect x="0" y="0" width="960" height="56" fill="#1B3A5C"/>
+  <text x="480" y="36" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="24" fill="#F5F0E8" text-anchor="middle" letter-spacing="0.05em">SECURITY ADVISORY WORKFLOW</text>
+
+  <!-- Phase Labels -->
+  <text x="140" y="90" font-family="'Helvetica Neue', Arial, sans-serif" font-size="11" fill="#8C8C8C" text-anchor="middle" letter-spacing="0.08em">PHASE 1: DETECT</text>
+  <text x="370" y="90" font-family="'Helvetica Neue', Arial, sans-serif" font-size="11" fill="#8C8C8C" text-anchor="middle" letter-spacing="0.08em">PHASE 2: ASSESS</text>
+  <text x="600" y="90" font-family="'Helvetica Neue', Arial, sans-serif" font-size="11" fill="#8C8C8C" text-anchor="middle" letter-spacing="0.08em">PHASE 3: RESPOND</text>
+  <text x="830" y="90" font-family="'Helvetica Neue', Arial, sans-serif" font-size="11" fill="#8C8C8C" text-anchor="middle" letter-spacing="0.08em">PHASE 4: VERIFY</text>
+
+  <!-- Phase Dividers -->
+  <line x1="255" y1="76" x2="255" y2="460" stroke="#8C8C8C" stroke-width="1" stroke-dasharray="6,4" opacity="0.4"/>
+  <line x1="485" y1="76" x2="485" y2="460" stroke="#8C8C8C" stroke-width="1" stroke-dasharray="6,4" opacity="0.4"/>
+  <line x1="715" y1="76" x2="715" y2="460" stroke="#8C8C8C" stroke-width="1" stroke-dasharray="6,4" opacity="0.4"/>
+
+  <!-- Step 1: Threat Detected -->
+  <g filter="url(#shadow-standard)">
+    <rect class="card-fill" x="50" y="110" width="180" height="90" fill="#FFFFFF" stroke="#C23B22" stroke-width="2" rx="4"/>
+    <rect x="46" y="110" width="8" height="90" fill="#C23B22" rx="0"/>
+    <text x="144" y="145" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="15" fill="#1B3A5C" text-anchor="middle">Threat Detected</text>
+    <text x="144" y="165" font-family="'Helvetica Neue', Arial, sans-serif" font-size="10" fill="#2B2B2B" text-anchor="middle">CVE Published / Advisory</text>
+    <text x="144" y="180" font-family="'Helvetica Neue', Arial, sans-serif" font-size="10" fill="#2B2B2B" text-anchor="middle">Supply Chain Alert</text>
+  </g>
+
+  <!-- Step 2: Triage -->
+  <g filter="url(#shadow-standard)">
+    <rect class="card-fill" x="50" y="240" width="180" height="90" fill="#FFFFFF" stroke="#1B3A5C" stroke-width="2" rx="4"/>
+    <text x="140" y="275" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="15" fill="#1B3A5C" text-anchor="middle">Initial Triage</text>
+    <text x="140" y="295" font-family="'Helvetica Neue', Arial, sans-serif" font-size="10" fill="#2B2B2B" text-anchor="middle">Severity Classification</text>
+    <text x="140" y="310" font-family="'Helvetica Neue', Arial, sans-serif" font-size="10" fill="#2B2B2B" text-anchor="middle">Affected Assets Inventory</text>
+  </g>
+
+  <!-- Arrow 1-2 -->
+  <line x1="140" y1="200" x2="140" y2="238" stroke="#8C8C8C" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 3: Risk Assessment -->
+  <g filter="url(#shadow-standard)">
+    <rect class="card-fill" x="280" y="140" width="180" height="90" fill="#FFFFFF" stroke="#1B3A5C" stroke-width="2" rx="4"/>
+    <text x="370" y="175" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="15" fill="#1B3A5C" text-anchor="middle">Risk Assessment</text>
+    <text x="370" y="195" font-family="'Helvetica Neue', Arial, sans-serif" font-size="10" fill="#2B2B2B" text-anchor="middle">CVSS Scoring</text>
+    <text x="370" y="210" font-family="'Helvetica Neue', Arial, sans-serif" font-size="10" fill="#2B2B2B" text-anchor="middle">Exploitability Analysis</text>
+  </g>
+
+  <!-- Step 4: Policy Check -->
+  <g filter="url(#shadow-standard)">
+    <rect class="card-fill" x="280" y="270" width="180" height="90" fill="#FFFFFF" stroke="#1B3A5C" stroke-width="2" rx="4"/>
+    <text x="370" y="305" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="15" fill="#1B3A5C" text-anchor="middle">Policy Check</text>
+    <text x="370" y="325" font-family="'Helvetica Neue', Arial, sans-serif" font-size="10" fill="#2B2B2B" text-anchor="middle">SLO Compliance</text>
+    <text x="370" y="340" font-family="'Helvetica Neue', Arial, sans-serif" font-size="10" fill="#2B2B2B" text-anchor="middle">Vendor Guidance Review</text>
+  </g>
+
+  <!-- Arrow 2-3 -->
+  <line x1="230" y1="270" x2="278" y2="200" stroke="#8C8C8C" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+  <!-- Arrow 2-4 -->
+  <line x1="230" y1="300" x2="278" y2="310" stroke="#8C8C8C" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 5: Remediation -->
+  <g filter="url(#shadow-elevated)">
+    <rect class="card-fill" x="510" y="140" width="180" height="90" fill="#FFFFFF" stroke="#D4A843" stroke-width="3" rx="4"/>
+    <text x="600" y="175" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="15" fill="#1B3A5C" text-anchor="middle">Remediation</text>
+    <text x="600" y="195" font-family="'Helvetica Neue', Arial, sans-serif" font-size="10" fill="#2B2B2B" text-anchor="middle">Patch / Upgrade</text>
+    <text x="600" y="210" font-family="'Helvetica Neue', Arial, sans-serif" font-size="10" fill="#2B2B2B" text-anchor="middle">Configuration Change</text>
+  </g>
+
+  <!-- Step 6: Notification -->
+  <g filter="url(#shadow-standard)">
+    <rect class="card-fill" x="510" y="270" width="180" height="90" fill="#FFFFFF" stroke="#1B3A5C" stroke-width="2" rx="4"/>
+    <text x="600" y="305" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="15" fill="#1B3A5C" text-anchor="middle">Notification</text>
+    <text x="600" y="325" font-family="'Helvetica Neue', Arial, sans-serif" font-size="10" fill="#2B2B2B" text-anchor="middle">Stakeholder Alert</text>
+    <text x="600" y="340" font-family="'Helvetica Neue', Arial, sans-serif" font-size="10" fill="#2B2B2B" text-anchor="middle">Advisory Published</text>
+  </g>
+
+  <!-- Arrow 3-5 -->
+  <line x1="460" y1="185" x2="508" y2="185" stroke="#D4A843" stroke-width="1.5" marker-end="url(#arrowhead-gold)"/>
+  <!-- Arrow 4-6 -->
+  <line x1="460" y1="315" x2="508" y2="315" stroke="#8C8C8C" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 7: Verification -->
+  <g filter="url(#shadow-standard)">
+    <rect class="card-fill" x="740" y="140" width="180" height="90" fill="#FFFFFF" stroke="#2D6A4F" stroke-width="2" rx="4"/>
+    <text x="830" y="175" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="15" fill="#1B3A5C" text-anchor="middle">Verification</text>
+    <text x="830" y="195" font-family="'Helvetica Neue', Arial, sans-serif" font-size="10" fill="#2B2B2B" text-anchor="middle">Scan Confirmation</text>
+    <text x="830" y="210" font-family="'Helvetica Neue', Arial, sans-serif" font-size="10" fill="#2B2B2B" text-anchor="middle">Regression Testing</text>
+  </g>
+
+  <!-- Step 8: Close -->
+  <g filter="url(#shadow-standard)">
+    <rect class="card-fill" x="740" y="270" width="180" height="90" fill="#FFFFFF" stroke="#2D6A4F" stroke-width="2" rx="4"/>
+    <text x="830" y="305" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="15" fill="#1B3A5C" text-anchor="middle">Close &amp; Document</text>
+    <text x="830" y="325" font-family="'Helvetica Neue', Arial, sans-serif" font-size="10" fill="#2B2B2B" text-anchor="middle">Lessons Learned</text>
+    <text x="830" y="340" font-family="'Helvetica Neue', Arial, sans-serif" font-size="10" fill="#2B2B2B" text-anchor="middle">Policy Update</text>
+  </g>
+
+  <!-- Arrow 5-7 -->
+  <line x1="690" y1="185" x2="738" y2="185" stroke="#8C8C8C" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+  <!-- Arrow 6-8 -->
+  <line x1="690" y1="315" x2="738" y2="315" stroke="#8C8C8C" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+  <!-- Feedback Loop -->
+  <path d="M 830 360 L 830 420 L 140 420 L 140 332" fill="none" stroke="#D4A843" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arrowhead-gold)"/>
+  <text x="480" y="440" font-family="'Helvetica Neue', Arial, sans-serif" font-size="10" fill="#D4A843" text-anchor="middle" font-style="italic">Continuous improvement feedback loop</text>
+
+  <!-- Legend -->
+  <g transform="translate(40, 475)">
+    <text x="0" y="12" font-family="'Helvetica Neue', Arial, sans-serif" font-size="10" fill="#8C8C8C" letter-spacing="0.08em">LEGEND:</text>
+    <rect x="70" y="2" width="14" height="14" fill="none" stroke="#C23B22" stroke-width="2" rx="2"/>
+    <text x="90" y="13" font-family="'Helvetica Neue', Arial, sans-serif" font-size="10" fill="#2B2B2B">Critical</text>
+    <rect x="140" y="2" width="14" height="14" fill="none" stroke="#D4A843" stroke-width="2" rx="2"/>
+    <text x="160" y="13" font-family="'Helvetica Neue', Arial, sans-serif" font-size="10" fill="#2B2B2B">Action Required</text>
+    <rect x="250" y="2" width="14" height="14" fill="none" stroke="#1B3A5C" stroke-width="2" rx="2"/>
+    <text x="270" y="13" font-family="'Helvetica Neue', Arial, sans-serif" font-size="10" fill="#2B2B2B">Standard</text>
+    <rect x="330" y="2" width="14" height="14" fill="none" stroke="#2D6A4F" stroke-width="2" rx="2"/>
+    <text x="350" y="13" font-family="'Helvetica Neue', Arial, sans-serif" font-size="10" fill="#2B2B2B">Resolved</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="480" y="520" font-family="'Helvetica Neue', Arial, sans-serif" font-size="9" fill="#8C8C8C" text-anchor="middle" letter-spacing="0.08em">ADVICE — SECURITY ADVISORY WORKFLOW — SIMMONS &amp; PARTNERS 2026</text>
+</svg>

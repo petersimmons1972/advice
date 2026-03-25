@@ -1,9 +1,6 @@
-# 🛡️ Advice — The Open-Source Security Guidance Repository
+![Advice — Open-Source Security Guidance Repository](design-system/advice-hero-header.svg)
 
-> **A unified, vendor-agnostic repository of security best practices, threat intelligence, and enforceable policies.**
-> Collecting wisdom from Chainguard, NIST, AWS, GCP, GitHub, and the broader security community.
-
-**STATUS:** 🟢 **Active & Growing**
+**STATUS:** Active & Growing
 **License:** Vendor guidance (see each vendor directory for source licensing)
 **Community:** Open to contributions
 
@@ -21,10 +18,10 @@ Security is **fragmented and contradictory.**
 - Your team says: *We have a deadline*
 
 Result: **Security guidance lives in scattered blog posts, PDFs, and Slack threads.** When a new threat emerges (LiteLLM malware, anyone?), you don't know:
-- ❌ Do we have this dependency?
-- ❌ How quickly can we patch?
-- ❌ What's our SLO for critical CVEs?
-- ❌ Who do we notify?
+- Do we have this dependency?
+- How quickly can we patch?
+- What's our SLO for critical CVEs?
+- Who do we notify?
 
 ### The Solution
 
@@ -34,40 +31,24 @@ Advice collects security wisdom from authoritative sources, reconciles conflicts
 
 ---
 
+## How It All Fits Together
+
+The Advice repository serves as the central hub for security guidance across multiple projects. Clearwatch, Infrastructure, and Homelab all feed real-world needs into Advice, which reconciles vendor guidance and produces enforceable standards.
+
+![Vendor Consolidation Flow](design-system/advice-consolidation-flow.svg)
+
+---
+
 ## What's Inside
 
-### 🚨 Phase 1: Vendor Guidance (Active)
+### Phase 1: Vendor Guidance (Active)
 
 We collect security recommendations from trusted sources and organize them so you can:
 - **Compare approaches** — See how different vendors solve the same problem
 - **Make informed decisions** — Understand trade-offs and rationale
 - **Build policies** — Turn guidance into enforceable rules
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    VENDOR GUIDANCE (Phase 1)                    │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│  Chainguard ──────┐                                             │
-│  (Container       │                                             │
-│   Hardening)      │                                             │
-│                   ├──→ Consolidated Security Framework          │
-│  NIST ────────────┤    (Reconciled, Authoritative, Traceable) │
-│  (Framework)      │                                             │
-│                   ├──→ Used by:                                 │
-│  AWS ─────────────┤    • Clearwatch (EDR reports)              │
-│  (Cloud)          │    • Infrastructure (K8s policies)         │
-│                   │    • Homelab (image hardening)             │
-│  GCP ─────────────┤                                             │
-│  (Cloud)          │                                             │
-│                   │                                             │
-│  GitHub ──────────┘                                             │
-│  (Supply Chain)                                                 │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
-
-### 🎯 Phase 2: Enforceable Policies (TBD)
+### Phase 2: Enforceable Policies (TBD)
 
 Synthesize vendor guidance into machine-readable policies:
 - JSON/YAML security standards
@@ -75,23 +56,19 @@ Synthesize vendor guidance into machine-readable policies:
 - Terraform compliance checks
 - Audit trails linking policies to sources
 
-```
-Vendor Guidance (Multi-perspective)
-            ↓
-Conflict Resolution (Decision-making)
-            ↓
-Policy Definition (Machine-readable)
-            ↓
-Enforcement (Admission control, CI/CD)
-            ↓
-Audit & Monitoring (Compliance tracking)
-```
+---
+
+## Security Advisory Workflow
+
+When a new threat emerges, Advice provides a structured 4-phase response process from detection through verification.
+
+![Security Advisory Workflow](design-system/advice-process-flow.svg)
 
 ---
 
 ## Current Content
 
-### ✅ Chainguard Guidance (Complete)
+### Chainguard Guidance (Complete)
 
 5 comprehensive guides on container security:
 
@@ -103,11 +80,11 @@ Audit & Monitoring (Compliance tracking)
 | **Vulnerability Management** | Detection to response | Scanning tools, SLOs, risk assessment, patching |
 | **Policy Enforcement** | Admission control | Kyverno/OPA, CHP mapping, rollout strategy |
 
-### 🚨 Security Alerts (Active)
+### Security Alerts (Active)
 
 - **LiteLLM Supply Chain Attack** — Malicious versions 1.82.7-1.82.8 steal all credentials. Pin to 1.82.6.
 
-### 📋 Multi-Vendor Structure (Ready)
+### Multi-Vendor Structure (Ready)
 
 Directories prepared for:
 - ✅ Chainguard (5 guides complete)
@@ -171,7 +148,7 @@ Everyone: "Unknown. Start rotating credentials."
 
 ## How to Use This Repository
 
-### 👀 I'm Looking for Security Guidance
+### I'm Looking for Security Guidance
 
 1. **Start with the threat you care about**
    - Container security? → `vendors/chainguard/`
@@ -187,14 +164,14 @@ Everyone: "Unknown. Start rotating credentials."
 3. **Check cross-vendor topics** (coming in Phase 2)
    - `topics/container-security/` — How different vendors approach the same problem
 
-### 🔧 I'm Building Security Policies (Phase 2)
+### I'm Building Security Policies (Phase 2)
 
 1. Find the vendor guidance for your domain
 2. Check `policies/` to see if it's been synthesized already
 3. If not, follow the `policies/README.md` to understand the policy format
 4. Map vendor recommendations to enforceable rules
 
-### 📝 I Want to Contribute
+### I Want to Contribute
 
 **Add a new vendor:**
 1. Create directory: `vendors/<vendor-name>/`
@@ -264,7 +241,7 @@ Result: Consistent, proactive, auditable security
 
 ## Quick Navigation
 
-### 🆘 I Have a Problem
+### I Have a Problem
 
 | Problem | Solution |
 |---------|----------|
@@ -275,7 +252,7 @@ Result: Consistent, proactive, auditable security
 | Building distroless images | `vendors/chainguard/distroless-patterns.md` |
 | Suspicious package, is it malware? | `security-advisories/` |
 
-### 📚 I Want to Learn
+### I Want to Learn
 
 | Topic | Where to Start |
 |-------|-------|
